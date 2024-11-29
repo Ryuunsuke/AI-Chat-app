@@ -11,6 +11,8 @@ with open(config_path) as config_file:
 
 API_URL = config['api_url']
 THREAD_ID = config['thread_id']
+assist_id = config['assist_id']
+api_key = config['api_key']
 
 class ChatApp:
     def __init__(self, root):
@@ -65,7 +67,7 @@ class ChatApp:
 
             # Send message to API
             print(f"Thread ID: {THREAD_ID}, sending message: {user_message}")
-            response = requests.post(f"{API_URL}/send-message/?thread_id={THREAD_ID}&message={user_message}")
+            response = requests.post(f"{API_URL}/send-message/?thread_id={THREAD_ID}&message={user_message}&assist_id={assist_id}&api_key={api_key}")
             if response.status_code == 200:
                 assistant_response = response.json()["response"]
                 print(f"  Response: {assistant_response}")

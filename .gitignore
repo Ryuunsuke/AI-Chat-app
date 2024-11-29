@@ -1,3 +1,8 @@
 # misc
 # file draft backup on Linux
 *.md~
+/web-service/app/test.py
+/web-service/AIENV
+/tkinter-client/DesktopAI
+/tkinter-client/app/config.json
+/.vs
